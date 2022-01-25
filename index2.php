@@ -53,7 +53,7 @@ $start = ($page - 1) * PAGING;
 $start = max(0, $start);
 
 /* 期末課題　１） 投稿されたデータを投稿した新しい順に表示させる */
-$sql = 'SELECT m.user, m.picture, p.* FROM members m, posts p WHERE m.id=p.member_id ORDER BY p.created DESC LIMIT :start, :list';
+$sql = 'SELECT m.user, m.picture, p.* FROM members m, posts p WHERE m.id=p.member_id ORDER BY p.created DESC LIMIT :start, :list ' ;
 $posts = $db->prepare($sql);
 $posts->bindValue(':start', $start, PDO::PARAM_INT);
 $posts->bindValue(':list', PAGING, PDO::PARAM_INT);
@@ -101,7 +101,7 @@ function makeLink($value) {
     <form action="" method="post">
       <dl>
         <?php /* ２）掲示板の投稿画面に、会員登録時に入力したニックネームを表示させる */ ?>
-        <dt><?php echo $member['user']; ?>さん、メッセージをどうぞ</dt>
+        <dt><?php echo hsc($member['user']); ?>さん、メッセージをどうぞ</dt><!-- nickname change -->
         <dd>
           <textarea name="message" cols="50" rows="5"><?php echo hsc($message); ?></textarea>
           <input type="hidden" name="reply_post_id" value="<?php echo hsc($_GET['res']); ?>" />
