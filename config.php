@@ -13,3 +13,4 @@ define('PWD_LENGTH',5);   // パスワード長
 define('PAGING',5);      // ページネーション単位
 
 
+
