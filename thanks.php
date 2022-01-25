@@ -7,7 +7,6 @@
 	<title>登録完了</title>
 	<link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 <div id="wrap">
   <div id="head">
@@ -17,7 +16,6 @@
 		<p>ユーザー登録が完了しました</p>
 		<p><a href="login.php">ログインする</a></p>
   </div>
-
 </div>
 </body>
 </html>
